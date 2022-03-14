@@ -10,28 +10,46 @@ var enemyAttack = 12;
 
 var fight = function() {
 
-// alert players they are starting the round
+    // alert players they are starting the round
+
     window.alert("The fight has begun!");
 
-//subtract playerAttack from enemyHealth and use result to update enemyHealth
+    //subtract playerAttack from enemyHealth and use result to update enemyHealth
 
     enemyHealth = enemyHealth - playerAttack;
 
-//log message in console to confirm it worked
+    //log message in console to confirm it worked
 
     console.log(
         playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
-    );
+        );
     
-//subtract enemyAttack from playerHealth and use result to update playerHealth
+    //subtract enemyAttack from playerHealth and use result to update playerHealth
 
     playerHealth = playerHealth - enemyAttack;
 
-//log message in console to confirm it worked
+    //log message in console to confirm it worked
 
     console.log(
         enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
-);
+        );
+
+    // check enemies health
+    if (enemyHealth <= 0) {
+        window.alert(enemyName + " has died!");
+        }
+    else {
+        window.alert(enemyName + " still has " + enemyHealth + " health left.");
+        }
+    
+    if (playerHealth <=0) {
+        window.alert(playerName + " has died!");
+    }
+    else {
+        window.alert(playerName + " still has " + playerHealth + " remaining.");
+    }
+
+
 }
 
 fight();
